@@ -1,23 +1,21 @@
 
+import './Universal.css'
 
-const SoldProgressBar = ({ discountPercentage }) => {
+const SoldProgressBar = ({ discPercentage }) => {
     return (
       <>
- <div className="progress" style={{position:"relative", marginTop:"6px", border:"1px solid"}}>
+ <div className="progress" style={{position:"relative", marginTop:"6px"}}>
                 {
-               discountPercentage ? 
+               discPercentage ? 
                <>
                <div
-                   className="progress-bar bg-info"
+                   className={`progress-bar bg-info ${discPercentage ? 'border1Px' : null }`}
                    role="progressbar"
-                   style={{ width: '50%' }}
                    aria-valuenow="50"
                    aria-valuemin="0"
                    aria-valuemax="100"
                  ></div>
-               
-               
-               
+
                  <span
                  className="progressBArLabel"
                  style={{
@@ -30,7 +28,7 @@ const SoldProgressBar = ({ discountPercentage }) => {
                    fontSize:".9rem"
                  }}
                >
-               {discountPercentage}% Sold 
+               {discPercentage}% Sold 
                </span> 
                </>
                 :

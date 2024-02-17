@@ -5,12 +5,11 @@ import { Link } from 'react-router-dom'
 
 import { FaRegUser } from "react-icons/fa6";
 import { FaCartArrowDown } from "react-icons/fa";
-import { MdModeNight } from "react-icons/md";
+import { CiLight } from "react-icons/ci";
+import { MdLightMode } from "react-icons/md";
 
 
-
-
-const NavigationBar =({navigationBarOptions, dropDown})=>{
+const NavigationBar =({navigationBarOptions, dropDown, toggleDarkMode, isDarkMode })=>{
     const searchInputRef = useRef(null);
 
     return(
@@ -43,8 +42,8 @@ const NavigationBar =({navigationBarOptions, dropDown})=>{
             <div className="_navigationBarDiv thirdChild">
 <input type="search" name="" id="" placeholder='Search Items' ref={searchInputRef} />
 <Link to="" style={{padding:'0 18px'}}><FaRegUser /></Link>
-<Link to="" style={{padding:'0 18px'}}><FaCartArrowDown /></Link>
-<Link to="" style={{padding:'0 18px'}}><MdModeNight /></Link>
+<Link to="" style={{padding:'0 18px'}} ><FaCartArrowDown /></Link>
+<Link to="" style={{padding:'0 18px'}} onClick={toggleDarkMode}>{isDarkMode ? <CiLight style={{fontSize:'22px', color:"white"}} />:  <MdLightMode style={{fontSize:'22px', color:"black"}}/>}</Link>
             </div>
           </div>
         </>

@@ -1,0 +1,7 @@
+.addToCart{
+transition: .1s ease-in-out;
+    }
+.addToCart:hover{
+    background-color: rgb(37, 42, 46) !important;
+    color: rgb(165, 165, 165) !important;
+    }

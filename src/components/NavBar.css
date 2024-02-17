@@ -68,6 +68,17 @@ background-color: #d4d1d1;
   }
   .thirdChild input {
     max-width: 147px;
-    border: 1px solid #d3cbcb;
-    height: 30px;
+    border:none;
+    background-color: #524a53;
+    height: 26px;
+    border-radius: 38px;
+    text-align: center;
   }
+  input.input::placeholder {
+    color: rgb(243, 0, 0);
+  }
+  input[type="search"]::placeholder {
+    color: rgb(255, 255, 255);
+  }
+  
+  
