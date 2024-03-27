@@ -5,7 +5,7 @@ import "./Universal.css"
 
 
 
-const ExploreItems =({itemImage, isDarkMode})=>{
+const ExploreItems =({itemImage, theme})=>{
 
     return (
   
@@ -28,8 +28,7 @@ style={{
 </div>
 
 
-<div className={`itemName border border-2 rounded mb-2 bg-white p-1 
-${isDarkMode ? 'displayNone' : ''}` }>
+<div className={`itemName border border-2 rounded mb-2 bg-white p-1`} style={{opacity:theme ==='dark-theme' && '8%'}}>
 
 
          <div className="card-text" style={{marginBottom:"0px"}}>

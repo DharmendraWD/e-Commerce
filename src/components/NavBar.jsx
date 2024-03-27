@@ -1,15 +1,16 @@
 import './NavBar.css'
-import React, { useRef, useEffect } from 'react';
-// import React, { createContext, useContext } from 'react';
-import { Link } from 'react-router-dom'
+import React, { useRef } from 'react';
+import { NavLink } from 'react-router-dom'
 
 import { FaRegUser } from "react-icons/fa6";
 import { FaCartArrowDown } from "react-icons/fa";
-import { CiLight } from "react-icons/ci";
 import { MdLightMode } from "react-icons/md";
 
+// import {BrowserRouter, Routes, Route} from "react-router-dom";
+// import Authenticate from '/authenticate/Authenticate'
 
-const NavigationBar =({navigationBarOptions, dropDown, toggleDarkMode, isDarkMode })=>{
+const NavigationBar =(  {navigationBarOptions, dropDown, toggleDarkMode, theme})=>{
+
     const searchInputRef = useRef(null);
 
     return(
@@ -20,9 +21,11 @@ const NavigationBar =({navigationBarOptions, dropDown, toggleDarkMode, isDarkMod
             </div>
             <div className="_navigationBarDiv secChild">
  {
- navigationBarOptions.map((elem, index)=>{
+
+
+  navigationBarOptions.map((elem, index)=>{
   return (
-          <Link key={"option"+index} to="">{elem.name}</Link>
+          <NavLink key={"option"+index}>{elem.name}</NavLink>
   )
  })
  }
@@ -33,17 +36,19 @@ const NavigationBar =({navigationBarOptions, dropDown, toggleDarkMode, isDarkMod
 <div className="dropdown">
   <button className="dropbtn">More</button>
   <div className="dropdown-content">
-  <Link to="">{dropDown[0].name}</Link>
-  <Link to="">{dropDown[1].name}</Link>
-  <Link to="">{dropDown[2].name}</Link>
+  <NavLink to="">{dropDown[0].name}</NavLink>
+  <NavLink to="">{dropDown[1].name}</NavLink>
+  <NavLink to="">{dropDown[2].name}</NavLink>
   </div>
 </div>
             </div>
             <div className="_navigationBarDiv thirdChild">
 <input type="search" name="" id="" placeholder='Search Items' ref={searchInputRef} />
-<Link to="" style={{padding:'0 18px'}}><FaRegUser /></Link>
-<Link to="" style={{padding:'0 18px'}} ><FaCartArrowDown /></Link>
-<Link to="" style={{padding:'0 18px'}} onClick={toggleDarkMode}>{isDarkMode ? <CiLight style={{fontSize:'22px', color:"white"}} />:  <MdLightMode style={{fontSize:'22px', color:"black"}}/>}</Link>
+<NavLink to="/member" style={{padding:'0 18px', color:'blue'}}><FaRegUser /></NavLink>
+<NavLink to="" style={{padding:'0 18px', color:'blue'}} ><FaCartArrowDown /></NavLink>
+<NavLink to="" style={{padding:'0 18px'}} onClick={toggleDarkMode}> <MdLightMode  style={{fontSize:'20px', color: theme === 'light-theme' ? 'black' : 'white'}} />
+</NavLink>
+
             </div>
           </div>
         </>

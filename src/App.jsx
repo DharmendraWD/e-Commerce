@@ -5,15 +5,19 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Heading from "./components/Heading"
 import ExploreItems from './components/ExploreItems';
 
+import './components/Universal.css'
 
-
-// import AddToCart from './components/AddToCart'
+import AddToCart from './components/AddToCart'
 import SoldProgressBar from "./components/SoldProgressBar";
 import ItemsPrice from "./components/ItemsPrice";
 import ItemsName from './components/ItemsName'
 // import HrLine from './components/HrLine'
 import SaveOnDiscount from './components/SaveOnDiscount'
 import OnTopDiscount from './components/OnTopDiscount'
+import HorizontalBarOptions from './components/TopOptionBar/HorizontalBarOptions'
+import Authenticate from './components/authenticate/Authenticate'
+
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 
 function App() {
@@ -136,74 +140,68 @@ priceBeforeDisc:1400,
 ]
 
 // DARK MODE 
-const [isDarkMode, setDarkMode] = useState(false);
+const [theme, setTheme]= useState("light-theme");
   const toggleDarkMode = () => {
-    setDarkMode(!isDarkMode);
+    if(theme === "dark-theme"){
+      setTheme("light-theme");
+    }
+    else{
+      setTheme("dark-theme")
+    }
   };
-
-// MAKING DARK BACKGROUND IN BODY 
 useEffect(()=>{
-  if(isDarkMode){
-    
-    document.body.style.transition = 'background-color 0.5s'
-    document.body.style.backgroundColor =  'black';
-    document.body.classList.add("darkMode")
-  }
-else{
-  document.body.style.transition = 'background-color 0.5s'
-  document.body.style.backgroundColor =  'white';
-  document.body.classList.remove("darkMode")
-}
+  document.body.className = theme;
+}, [theme]);
 
-  // cleanup function to remove style component
-  return ()=>{
-    document.body.style.backgroundColor = '';
-    document.body.style.transition = '';
-  };
-}, [isDarkMode])
 
 // GETTING CLICKED ITEM ALL VALUES 
 const itemPage = (event) => {
   const childrenValues = Array.from(event.currentTarget.children).map((child) => {
     return child.innerText || child.value || '';
   });
-
-  console.log('MainDiv clicked. Children Values:', childrenValues);
 };
 
   return (
     <>
-      <Router>
+    <BrowserRouter>
+<Routes>
+    <Route path="/" element={
+     <>
 
-        <NavigationBar 
+         <NavigationBar 
         navigationBarOptions={navigationBarOptions} 
         dropDown={dropDown}
         toggleDarkMode={toggleDarkMode}
-        isDarkMode={isDarkMode}
+        theme={theme}
         ></NavigationBar>
         <Slideshow></Slideshow>
+      <HorizontalBarOptions></HorizontalBarOptions>
 <Heading explore={explore}></Heading>
 
-<div className={`exploreItemParent d-grid ${isDarkMode ? 'bgBlack' : ''}`}
+<div className={`exploreItemParent d-grid`}
  style={{
-        gridTemplateColumns:"1fr 1fr 1fr 1fr 1fr",
+        gridTemplateColumns:"1fr 1fr 1fr 1fr 1fr 1fr",
         gridGap:"8px"
       }}>
 
 {exploreItems.map((items, index) => (
-  <div key={`k${index}`}>
 
-  <div key={"k"} className={`font-normal exploreItemParentChild mb-2 me-2 col-sm-5 product-wrapper product-card-size text-start ${items.discPercentage ? '' : 'discount-padding'} ${isDarkMode ? 'bgBlack' : ''}`} 
+  <div key={"k"+index} className={`font-normal exploreItemParentChild mb-2 me-2 col-sm-5 product-wrapper product-card-size text-start ${items.discPercentage ? '' : 'discount-padding'}`} 
 onClick={itemPage}
  style={{flexDirection:'column', display:'flex', justifyContent:'space-between', width:'100%', boxShadow:'0px 2px 8px 0px' }}
  >
 
-  <OnTopDiscount onTopDiscountValue={items.discPercentage}></OnTopDiscount>
+
+  <OnTopDiscount 
+  onTopDiscountValue={items.discPercentage}
+  theme={theme}
+  ></OnTopDiscount>
+
     <ExploreItems
       itemImage={items.img1}
       exploreItems={items}  // Pass the current item, not the entire array
       discPercentage={items.discPercentage}  // Use items.discPercentage instead of exploreItems.discPercentage
-      isDarkMode={isDarkMode}
+      theme={theme}
     />
     {/* ITEMS NAME  */}
     <ItemsName itemName={items.name}
@@ -212,16 +210,26 @@ onClick={itemPage}
     <ItemsPrice priceBeforeDisc={items.priceBeforeDisc} discPercentage={items.discPercentage}></ItemsPrice>
     {/* SAVE ON DISCOUNT IN NPR  */}
     <SaveOnDiscount discPercentage ={items.discPercentage} priceBeforeDisc ={items.priceBeforeDisc}></SaveOnDiscount>
-
+{/* ADD TO CART  */}
+<AddToCart></AddToCart>
     {/* SOLD PROGRESS BAR  */}
     <SoldProgressBar discPercentage = {items.discPercentage}></SoldProgressBar>
-  </div>
   </div>
 ))}
 
   </div>
+     </>
+    }/> 
+    {/* <Route path="/member" element= {Authenticate} /> */}
+    <Route path="/member" element= <Authenticate></Authenticate> />
+</Routes>
+
+
+      {/* <Router> */}
+       
   {/* </div> */}
-      </Router>
+      {/* </Router> */}
+      </BrowserRouter>
     </>
   )
 }

@@ -1,0 +1,62 @@
+body{
+    background-color: rgb(250, 250, 250);
+    
+}
+
+.HorizontalBar{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    z-index: 999;
+}
+.firstData{
+opacity: 0;
+    position: absolute;
+    cursor: pointer;
+    border-radius: 10px;
+    background: #e0e0e0;
+    box-shadow:  23px 23px 45px #bebebe,
+                 -23px -23px 45px #ffffff;
+    width: 200px ;
+       top: 100%;
+left: -61px;
+transition: .2s ease-in-out;
+}
+.firstData p, .secondData P{
+   margin-top: 4PX;
+   margin-bottom: 0;
+   padding-top:0 ;
+   padding-bottom: 0;
+}
+
+.hrParent:hover .firstData{
+ opacity: 1;
+}
+.hrParent{
+position: relative;
+cursor: pointer;
+}
+.hrParent:hover .arrow{
+    transform: rotate(90deg);
+}
+
+.secondData{
+    position: absolute;
+    left: 38%;
+    border-radius: 4px;
+    background: #e0e0e0;
+    box-shadow:  23px 23px 45px #bebebe,
+                 -23px -23px 45px #ffffff;
+    top: 100px;
+    cursor: pointer;
+}
+.imageAndPara p{
+    margin: 0;
+    padding: 0;
+}
+.firstData p:hover{
+background-color: rgb(179, 190, 179);
+}
+.secondData p:hover{
+background-color: rgb(168, 175, 168);
+}

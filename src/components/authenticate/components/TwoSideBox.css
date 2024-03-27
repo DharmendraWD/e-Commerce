@@ -1,0 +1,278 @@
+.rightImg{
+  width: 60%;
+  border-bottom-right-radius: 7100%;
+min-height: 100vh;
+z-index: 99999;
+position: absolute;
+z-index: 9;
+transition: .5s ease-in-out;
+
+/* left: ; */
+}
+.animate{
+    animation: fullImage 1.7s ease-in-out ;
+}
+.signUp .rightImg{
+    float: right;
+    transform: scaleX(-1);
+    /* left: '0'; */
+    right: 0;   
+
+}
+.rightSide h1{
+    color: black;
+}
+.leftSideText p{
+color: rgb(212, 212, 162);
+font-size: 1.2rem;
+/* -webkit-text-stroke: 1px rgb(0, 0, 0); */
+}
+.main{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+color: white;
+background-color: #8d6849;
+}
+.parent{
+    /* position: absolute;
+    top: 0; */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+.leftSide{
+z-index: 9999;
+padding: 60px;
+}
+.rightSide{
+z-index: 9999;
+padding: 100px  0  0 0 ;
+}
+.rightSide input{
+    border: none;
+    margin: 5px 0;
+background-color: transparent;
+border-radius: 2px;
+background: #ddd2c8;
+box-shadow:  13px 13px 26px #8d6849,
+             -13px -13px 26px #8d6849;
+outline: none;
+padding: 12px;
+}
+.rightSide input:focus {
+/* border-radius: 37px; */
+background: #8bf8e2;
+box-shadow:  7px 7px 14px #76d3c0,
+             -7px -7px 14px #a0ffff;
+  }
+.accountCreateBtn{
+    font-family: Roboto Bold
+    Roboto Thin
+    Roboto Slab
+    Roboto Light;
+    font-weight: 800;
+    border: 1px solid white;
+    background-color: transparent;
+    color: rgb(165, 171, 255);
+    /* -webkit-text-stroke: .2px rgb(238, 241, 8); */
+    font-size: 1.4rem;
+    padding: 6px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.icons{
+    color: black;
+}
+.inBtn:hover{
+                background: #f4fff4;
+                box-shadow:  9px 9px 14px #bebebe,
+                             -7px -7px 14px #ffffff;
+
+}
+
+/* //////////////////ZZZZZ */
+
+button {
+    position: relative;
+    padding: 12px 35px;
+    background: #fec195;
+    font-size: 17px;
+    font-weight: 500;
+    color: #181818;
+    border: 3px solid #fec195;
+    border-radius: 8px;
+    box-shadow: 0 0 0 #fec1958c;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .star-1 {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 25px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
+  }
+  
+  .star-2 {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    width: 15px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+  }
+  
+  .star-3 {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    width: 5px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 1s cubic-bezier(0, 0.4, 0, 1.01);
+  }
+  
+  .star-4 {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    width: 8px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 0.8s cubic-bezier(0, 0.4, 0, 1.01);
+  }
+  
+  .star-5 {
+    position: absolute;
+    top: 25%;
+    left: 45%;
+    width: 15px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 0.6s cubic-bezier(0, 0.4, 0, 1.01);
+  }
+  
+  .star-6 {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    width: 5px;
+    height: auto;
+    filter: drop-shadow(0 0 0 #fffdef);
+    z-index: -5;
+    transition: all 0.8s ease;
+  }
+  
+  button:hover {
+    background: transparent;
+    color: #fec195;
+    box-shadow: 0 0 25px #fec1958c;
+  }
+  
+  button:hover .star-1 {
+    position: absolute;
+    top: -80%;
+    left: -30%;
+    width: 25px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+  }
+  
+  button:hover .star-2 {
+    position: absolute;
+    top: -25%;
+    left: 10%;
+    width: 15px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+  }
+  
+  button:hover .star-3 {
+    position: absolute;
+    top: 55%;
+    left: 25%;
+    width: 5px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+  }
+  
+  button:hover .star-4 {
+    position: absolute;
+    top: 30%;
+    left: 80%;
+    width: 8px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+  }
+  
+  button:hover .star-5 {
+    position: absolute;
+    top: 25%;
+    left: 115%;
+    width: 15px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+  }
+  
+  button:hover .star-6 {
+    position: absolute;
+    top: 5%;
+    left: 60%;
+    width: 5px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #fffdef);
+    z-index: 2;
+  }
+  
+  .fil0 {
+    fill: #fffdef;
+  }
+  
+
+
+
+
+.rightSide .info{
+    display: flex;
+    flex-direction: column;
+}
+.rightSide .info input{
+width: 200px;
+}
+
+
+
+
+
+
+@keyframes fullImage {
+    0% {
+        /* width: 1%; */
+  border-bottom-right-radius: 2000%;
+    }
+  
+    100% {
+        width: 100%;
+        border-bottom-right-radius: 0;
+    }
+  }
+  
+
+  
