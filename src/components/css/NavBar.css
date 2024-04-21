@@ -15,6 +15,7 @@
     left: 50%;
     transform: translate(-50%, 0);
 text-align: center;
+z-index: 99999;
   }
 
   .dropdown:hover .dropdown-content {

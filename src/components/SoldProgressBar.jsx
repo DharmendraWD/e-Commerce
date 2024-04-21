@@ -1,5 +1,5 @@
 
-import './Universal.css'
+import './css/Universal.css'
 
 const SoldProgressBar = ({ discPercentage }) => {
     return (

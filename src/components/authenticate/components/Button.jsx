@@ -1,6 +1,4 @@
 import React from 'react'
-import './Button.css'
-import NavBar from '../../NavBar'
 
 
 
@@ -8,7 +6,6 @@ import NavBar from '../../NavBar'
 function Button({label, signUpSignIn}) {
   return (
   <>
-<NavBar></NavBar>
         <button className='btnn' onClick={signUpSignIn}>
 {label}
 <div className="star-1">

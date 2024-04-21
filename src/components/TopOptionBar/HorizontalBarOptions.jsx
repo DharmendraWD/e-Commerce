@@ -136,6 +136,7 @@ setSecondFinalData([])
     return(
       <>
       <div 
+      key={{index}}
       onMouseEnter={changeFirstDat}
           className={`hrParent ${'bar'+index}`}
           style={{width: '100%' }}
@@ -177,7 +178,7 @@ secondFInalData.map((elem)=>{
           return(
 
           <>
-            <p>{elem.name}</p>
+            <p key={elem}>{elem.name}</p>
           </>
           )
         })

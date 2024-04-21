@@ -3,11 +3,13 @@ import React from 'react'
 import { CiUser } from "react-icons/ci";
 import { AiOutlineMail } from "react-icons/ai";
 import { RiLockPasswordLine } from "react-icons/ri";
-
+import Footer from '../../Footer'
 import { useRef, useState } from 'react'
 import Button from './Button';
 import './TwoSideBox.css'
 import img1 from '../assets/2.jpg'
+
+
 function TwoSideBox() {
     const imageRef= useRef(null)
 
@@ -49,13 +51,6 @@ const signUpSignIn=()=>{
             upOrIn === 'in' ? 'New Here?': 'One of Us?'
         }</h1>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis, veniam.</p>
-        {/* <button
-        className={`accountCreateBtn`}
-         onClick={signUpSignIn}>
-            {
-                upOrIn === 'in' ? 'Sign Up':'Sign In'
-            }
-        </button> */}
         
 <Button label={inUp} signUpSignIn={signUpSignIn}></Button>
         </div>
@@ -91,6 +86,7 @@ const signUpSignIn=()=>{
     <p>Sign {upOrIn === 'in' ? 'In':'Up'} with</p>
 </div>
         </div>
+
         </div>
     </div>
     

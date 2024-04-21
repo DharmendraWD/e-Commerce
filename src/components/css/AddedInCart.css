@@ -1,0 +1,14 @@
+
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.AddedItem .itemParent .item img{
+width: 50%;
+}
+.AddedItem .itemParent .item .itemTitle{
+line-height: 1;
+}

@@ -1,7 +1,12 @@
+import userContext from './context/Context';
+import { useContext } from 'react';
 
-const Heading =({explore})=>{
+
+const Heading =()=>{
+    const value = useContext(userContext);
+
     return(
-        <h1 className="fs-2 text-primary text-center">{explore}</h1>
+        <h1 className="fs-2 text-primary text-center">{value.explore}</h1>
     )
 }
 

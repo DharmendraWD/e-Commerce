@@ -1,20 +1,27 @@
 import { MdDiscount } from "react-icons/md";
+import userContext from './context/Context';
+import { useContext } from 'react';
 
-const OnTopDiscount = ({onTopDiscountValue, theme})=>{
-
+// value.exploreItems.map
+const OnTopDiscount = ({discPercentage})=>{
     {/* SHOWING DISCOUNT ON TOP IF GIVEN  */}
+    
+    const value = useContext(userContext);
+
     return (
-<div className="col-6 discount"
-style={{backgroundColor: theme === 'light-theme' ? 'yellow' : '#4CAF50'}}
+        
+        <>
+
+<div className="col-6 discount text-black"
+style={{backgroundColor: value.theme === 'light-theme' ? 'yellow' : '#4CAF50'}}
 >
-{onTopDiscountValue ?   /* SHOW DISCOUNT ONLY WHEN AVAILABLE */
-<>
-<MdDiscount></MdDiscount>    {/*DISCOUNT ICON ON TOP */}
-<span>{onTopDiscountValue}% Off</span>      {/*DISCOUNT PERCENTAGE */}
+{discPercentage ?  <><MdDiscount></MdDiscount>  <span>{discPercentage}% Off</span>      {/*DISCOUNT PERCENTAGE */}
 </>
-: null}
+: <span>Hurry Up!</span>}
 </div>
+</>
     )
 }
-
 export default OnTopDiscount;
+
+
